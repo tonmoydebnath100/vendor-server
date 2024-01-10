@@ -38,8 +38,9 @@ async function run(){
         const id=req.params.style;
         const query={};
         const item=data.find(query);
-        res.send(item);
-        console.log(item);
+        const product= await item.toArray();
+        res.send(product);
+        console.log(product);
       });
     app.put('/infodataUpdate',async(req,res)=>{
       const item=req.body;
